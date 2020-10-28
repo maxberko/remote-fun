@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Game.create(title:"The test game", description:"That's a great game", url:"www.game.com", price:100, paying: true, score: 42)
+Game.create(title:"Slap remote", description:"Amazing slaps!", url:"www.slaps.com", price:100, paying: false, score: 42)
