@@ -3,19 +3,44 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .game-item {
   height: 150px;
-  // border: 2px solid #4B33FF;
   font-size: 19px;
   font-family: 'Plain-Black';
-  background-color: #FFFFFF;
   color: #001011;
   margin-top: 32px;
-  box-shadow: 8px 8px 0px #4B33FF;
   transition: 0.3s;
 }
 
+.game-item.color-1 {
+  // background-color: #90C2E7;
+  box-shadow: 8px 8px 0px #90C2E7;
+}
 
-.game-item:hover {
+.game-item.color-1:hover {
+  box-shadow: 12px 12px 0px #90C2E7;
+}
+
+.game-item.color-2 {
+  box-shadow: 8px 8px 0px #F61067;
+}
+
+.game-item.color-2:hover {
+  box-shadow: 12px 12px 0px #F61067;
+}
+
+.game-item.color-3 {
+  box-shadow: 8px 8px 0px #4B33FF;
+}
+
+.game-item.color-3:hover {
   box-shadow: 12px 12px 0px #4B33FF;
+}
+
+.game-item.color-4 {
+  box-shadow: 8px 8px 0px #64F58D;
+}
+
+.game-item.color-4:hover {
+  box-shadow: 12px 12px 0px #64F58D;
 }
 
 .game-score {

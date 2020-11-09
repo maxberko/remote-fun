@@ -1,6 +1,6 @@
 <% @games.each do |game| %>
 <li style="list-style-type: none">
-  <div class="game-item relative flex flex-row bg-gray-200 w-1/2">
+  <div class="game-item color-<%= (1..4).to_a.sample %> relative flex flex-row bg-gray-200 w-1/2">
     <div class="game-content flex py-4 pl-4 pr-24">
       <div class="game-img mr-8">
         <a>
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="game-score shadow h-6 w-6 p-8 flex flex-col justify-center items-center absolute rounded-sm">
+    <div class="game-score shadow h-6 w-6 p-8 flex flex-col justify-center items-center absolute rounded-md">
       <i class="fa fa-chevron-bottom"></i>
       <p class="text-center"><%= game.score %></p>
     </div>
