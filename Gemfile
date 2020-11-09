@@ -3,9 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.6.6"
 gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary", "~> 1.16.0"
 gem "simple_form"
 gem "font-awesome-rails"
-# gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 gem "acts_as_votable"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
