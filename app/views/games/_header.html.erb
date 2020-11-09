@@ -1,0 +1,12 @@
+<header>
+  <div class="header flex flex-row items-center py-8 relative justify-center">
+    <div class="title-container">
+      <h1 class="title text-white text-2xl">Remote Fun</h1>
+    </div>
+    <div class="button-container absolute right-0">
+      <div class="button md:mr-12">
+        <%= link_to "<button>Add a new ressource</button>".html_safe, new_game_path, :id => "open-contacts-dialog-btn", :class => "inline-flex items-center bg-gray-200 border-0 py-2 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0" %>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,36 +1,8 @@
 <p id="notice"><%= notice %></p>
-<div class="index-container w-4/5">
-  <h1>Games</h1>
-    <div>
-      <% @games.each do |game| %>
-      <li style="list-style-type: none">
-        <div class="game flex flex-row p-6">
-          <div class="game-img mr-8">
-            <a>
-              <%= link_to "To do : add thumbnail", game %>
-              <div class="game-img-thumbnail"></div>
-            </a>
-          </div>
-          <div class="content flex flex-col">
-            <h1 class="text-xl"><%= game.title %></h1>
-            <h2 class="text-md"><%= game.description %></h2>
-            <div class="game-details flex-col">
-              <p><%= game.url %></p>
-              <% if game.paying %>
-              <p><%= game.score %></p>
-              <% end %>
-            </div>
-            <div class="flex flex-row">
-              <p><%= link_to "Edit", edit_game_path(game) %></p>
-              <p><%= link_to "Destroy", game, method: :delete, data: { confirm: "Are you sure?" } %></p>
-            </div>
-          </div>
-        </div>
-      </li>
-      <% end %>
-    </div>
+<div class="games-container px-32">
+  <ul>
+    <%= render partial: "game_cards" %>
+  </ul>
 </div>
-
-<br>
 
 <%= link_to "New Game", new_game_path %>

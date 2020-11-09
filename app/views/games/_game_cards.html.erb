@@ -1,0 +1,26 @@
+<% @games.each do |game| %>
+<li style="list-style-type: none">
+  <div class="game-item relative flex flex-row bg-gray-200 w-1/2">
+    <div class="game-content flex py-4 pl-4 pr-24">
+      <div class="game-img mr-8">
+        <a>
+          <%= link_to "To do : cloudinary config", game %>
+          <div class="game-img-thumbnail"></div>
+        </a>
+      </div>
+      <div class="game-description flex flex-col">
+        <h1 class="text-2xl flex-grow"><%= game.title %></h1>
+        <h2 class="text-md flex-grow mb-4"><%= game.description %></h2>
+        <div class="game-edit flex flex-row">
+          <p class="mr-4"><%= link_to "Edit", edit_game_path(game) %></p>
+          <p><%= link_to "Destroy", game, method: :delete, data: { confirm: "Are you sure?" } %></p>
+        </div>
+      </div>
+    </div>
+    <div class="game-score shadow h-6 w-6 p-8 flex flex-col justify-center items-center absolute rounded-sm">
+      <i class="fa fa-chevron-bottom"></i>
+      <p class="text-center"><%= game.score %></p>
+    </div>
+  </div>
+</li>
+<% end %>

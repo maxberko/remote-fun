@@ -6,5 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Game.create(title:"The test game", description:"That's a great game", url:"www.game.com", price:100, paying: true, score: 42)
-Game.create(title:"Slap remote", description:"Amazing slaps!", url:"www.slaps.com", price:100, paying: false, score: 42)
+require 'faker'
+
+Game.delete_all
+
+50.times do
+    Game.create(title:"#{Faker::Game.title}", description:"#{Faker::Company.bs}", url:"www.fakeURL.com", price: rand(1..100), paying: Faker::Boolean.boolean, score: rand(1..4242),)
+end
