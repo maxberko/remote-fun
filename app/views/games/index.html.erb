@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
-<div class="games-container px-32">
-  <ul>
-    <%= render partial: "game_cards" %>
-  </ul>
+<div class="context-container p-8 flex justify-center text-align text-3xl">
+  <h1>A directory of fun, remote-friendly team activities.</h1>
+</div>
+<div class="games-container px-8 flex flex-row justify-center">
+    <%= render partial: "game_cards_by_vote" %>
+    <%= render partial: "game_cards_by_vote" %>
 </div>
 
-<%= link_to "New Game", new_game_path %>
+<%= render partial: "footer" %>
