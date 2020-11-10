@@ -10,6 +10,17 @@ require 'faker'
 
 Game.delete_all
 
-50.times do
-    Game.create(title:"#{Faker::Game.title}", description:"#{Faker::Company.bs}", url:"www.fakeURL.com", price: rand(1..100), paying: Faker::Boolean.boolean, score: rand(1..4242),)
+unless Rails.env.production?
+  1..20.times.each do |n|
+    Game.create(
+        title:"#{Faker::Game.title}",
+        description:"#{Faker::Company.bs}",
+        url:"www.fakeURL.com",
+        price: rand(1..100),
+        paying: Faker::Boolean.boolean,
+        score: rand(1..42)
+        )
+        Game.tag_list.add "tag1", "tag2"
+        Game.save
+  end
 end
