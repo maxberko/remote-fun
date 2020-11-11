@@ -7,7 +7,7 @@
             <div class="game-img-thumbnail">
               <a>
                 <% game.photos.each do |photo| %>
-                  <%= cl_image_tag photo.key, class: "max-w-none", height: 80, width: 80, crop: :fill, :fetch_format => :auto %>
+                  <%= cl_image_tag photo.key, class: "max-w-none", height: 80, width: 80, crop: :fill %>
                 <% end %>
               </a>
             </div>
