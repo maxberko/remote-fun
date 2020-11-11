@@ -2,45 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .game-item {
-  height: 150px;
-  font-size: 19px;
-  font-family: 'Plain-Black';
+  height: 130px;
+  font-size: 16px;
   color: #001011;
   margin-top: 32px;
   transition: 0.3s;
-}
-
-.game-item.color-1 {
-  // background-color: #90C2E7;
-  box-shadow: 8px 8px 0px #90C2E7;
-}
-
-.game-item.color-1:hover {
-  box-shadow: 12px 12px 0px #90C2E7;
-}
-
-.game-item.color-2 {
-  box-shadow: 8px 8px 0px #F61067;
-}
-
-.game-item.color-2:hover {
-  box-shadow: 12px 12px 0px #F61067;
-}
-
-.game-item.color-3 {
-  box-shadow: 8px 8px 0px #4B33FF;
-}
-
-.game-item.color-3:hover {
-  box-shadow: 12px 12px 0px #4B33FF;
-}
-
-.game-item.color-4 {
-  box-shadow: 8px 8px 0px #64F58D;
-}
-
-.game-item.color-4:hover {
-  box-shadow: 12px 12px 0px #64F58D;
+  background-color: #FFFFFF;
+  // transition: 0.3s;
 }
 
 .game-score {
@@ -52,5 +20,44 @@
 li {
   justify-content: center;
   display: flex;
-  min-width: 700px;
+  min-width: 600px;
+}
+
+.game-item.color-1 {
+  box-shadow: 8px 8px 0px #90C2E7;
+  border: 1px solid #90C2E7;
+
+  &:hover {
+    box-shadow: 12px 12px 0px #90C2E7;
+  }
+}
+
+// .game-item.color-1:hover {}
+
+.game-item.color-2 {
+  box-shadow: 8px 8px 0px #F61067;
+  border: 1px solid #F61067;
+
+  &:hover {
+    box-shadow: 12px 12px 0px #F61067;
+  }
+}
+
+
+.game-item.color-3 {
+  box-shadow: 8px 8px 0px #4B33FF;
+  border: 1px solid #4B33FF;
+
+  &:hover {
+    box-shadow: 12px 12px 0px #4B33FF;
+  }
+}
+
+.game-item.color-4 {
+  box-shadow: 8px 8px 0px #64F58D;
+  border: 1px solid #64F58D;
+
+  &:hover {
+    box-shadow: 12px 12px 0px #64F58D;
+  }
 }

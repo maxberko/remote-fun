@@ -1,23 +1,23 @@
 <div class="container flex flex-col">
   <% @games.each do |game| %>
   <li style="list-style-type: none">
-      <div class="game-item color-<%= (1..4).to_a.sample %> relative flex flex-row bg-gray-200 w-4/5">
-        <div class="game-content flex py-3 pl-4 pr-24">
+      <div class="game-item px-auto color-<%= (1..4).to_a.sample %> relative flex flex-row w-4/5">
+        <div class="game-content flex py-2 pl-4 pr-18">
           <div class="game-img ml-4 mr-8 my-auto">
             <div class="game-img-thumbnail">
               <a>
                 <% game.photos.each do |photo| %>
-                  <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill, :fetch_format => :auto %>
+                  <%= cl_image_tag photo.key, class: "max-w-none", height: 80, width: 80, crop: :fill, :fetch_format => :auto %>
                 <% end %>
               </a>
             </div>
           </div>
-          <div class="game-description flex flex-col flex-grow pt-3 mr-6">
-            <h1 class="text-2xl"><%= game.title %></h1>
+          <div class="game-description flex flex-col flex-grow pt-3">
+            <h1 class="text-xl"><%= game.title %></h1>
             <h2 class="text-md flex-shrink mb-4 w-4/5"><%= game.description %></h2>
           </div>
         </div>
-        <div class="game-score shadow h-6 w-6 p-8 flex flex-col justify-center items-center absolute rounded-md bg-white">
+        <div class="game-score shadow h-6 w-6 p-5 flex flex-col justify-center items-center absolute rounded-md bg-white">
           <i class="fa fa-chevron-bottom"></i>
           <p class="text-center"><%= game.score %></p>
         </div>
