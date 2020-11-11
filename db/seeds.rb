@@ -11,7 +11,7 @@ require "open-uri"
 
 Game.delete_all
 
-unless Rails.env.production?
+# unless Rails.env.production?
   1..20.times.each do |n|
     game = Game.new(
       title:"#{Faker::Game.title}",
@@ -25,4 +25,4 @@ unless Rails.env.production?
     game.photos.attach(io: file, filename: 'placeholder.png', content_type: 'image/jpg')
     game.save
   end
-end
+# end
