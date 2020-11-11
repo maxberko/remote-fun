@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
-<div class="context-container p-8 flex justify-center text-align text-3xl">
-  <h1>A directory of fun, remote-friendly team activities.</h1>
+<div class="context-container p-12 flex justify-center text-align text-3xl ">
+  <h1 class="whitespace-pre">A platform to discover fun, remote-friendly team activities.</h1>
 </div>
 <div class="games-container px-8 flex flex-row justify-center">
+  <div class="list">
+    <h1 class="text-center">Most recent</h1>
     <%= render partial: "game_cards_by_vote" %>
+  </div>
+  <div class="list">
+    <h1 class="text-center">Most upvoted</h1>
     <%= render partial: "game_cards_by_vote" %>
+  </div>
 </div>
 
 <%= render partial: "footer" %>

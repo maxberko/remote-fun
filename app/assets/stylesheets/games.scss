@@ -45,7 +45,12 @@
 
 .game-score {
   top: 50%;
-  right: 40px;
-
+  right: 10px;
   transform: translate(-50%, -50%);
+}
+
+li {
+  justify-content: center;
+  display: flex;
+  min-width: 700px;
 }

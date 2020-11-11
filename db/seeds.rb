@@ -7,20 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require "open-uri"
 
 Game.delete_all
 
 unless Rails.env.production?
   1..20.times.each do |n|
-    Game.create(
-        title:"#{Faker::Game.title}",
-        description:"#{Faker::Company.bs}",
-        url:"www.fakeURL.com",
-        price: rand(1..100),
-        paying: Faker::Boolean.boolean,
-        score: rand(1..42)
-        )
-        Game.tag_list.add "tag1", "tag2"
-        Game.save
+    game = Game.new(
+      title:"#{Faker::Game.title}",
+      description:"#{Faker::Company.bs}",
+      url:"www.fakeURL.com",
+      price: rand(1..100),
+      paying: Faker::Boolean.boolean,
+      score: rand(1..42)
+    )
+    file = URI.open('https://picsum.photos/200')
+    game.photos.attach(io: file, filename: 'placeholder.png', content_type: 'image/jpg')
+    game.save
   end
 end

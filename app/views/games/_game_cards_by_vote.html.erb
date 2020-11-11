@@ -1,4 +1,4 @@
-<div class="container flex flex-col ">
+<div class="container flex flex-col">
   <% @games.each do |game| %>
   <li style="list-style-type: none">
       <div class="game-item color-<%= (1..4).to_a.sample %> relative flex flex-row bg-gray-200 w-4/5">
@@ -6,22 +6,18 @@
           <div class="game-img ml-4 mr-8 my-auto">
             <div class="game-img-thumbnail">
               <a>
-                <%= cl_image_tag("nje0ihjffyh1lbbg4hos.jpg",
-                                 width: 100, height: 100, crop: :fill) %>
+                <% game.photos.each do |photo| %>
+                  <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill, :fetch_format => :auto %>
+                <% end %>
               </a>
             </div>
           </div>
-          <div class="game-description flex flex-col flex-grow">
-            <h1 class="text-2xl flex-grow"><%= game.title %></h1>
-            <h2 class="text-md flex-grow mb-4"><%= game.description %></h2>
-            <div class="game-edit flex flex-row">
-              <p class="mr-4"><%= link_to "Edit", edit_game_path(game) %></p>
-              <p><%= link_to "Destroy", game, method: :delete, data: { confirm: "Are you sure?" } %></p>
-            </div>
+          <div class="game-description flex flex-col flex-grow pt-3 mr-6">
+            <h1 class="text-2xl"><%= game.title %></h1>
+            <h2 class="text-md flex-shrink mb-4 w-4/5"><%= game.description %></h2>
           </div>
         </div>
-        <div
-          class="game-score shadow h-6 w-6 p-8 flex flex-col justify-center items-center absolute rounded-md bg-white">
+        <div class="game-score shadow h-6 w-6 p-8 flex flex-col justify-center items-center absolute rounded-md bg-white">
           <i class="fa fa-chevron-bottom"></i>
           <p class="text-center"><%= game.score %></p>
         </div>
